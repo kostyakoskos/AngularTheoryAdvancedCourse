@@ -11,6 +11,6 @@ export class FilterPipe implements PipeTransform {
       return posts
     }
 
-    return posts.filter(post => post[searchField].toLowerCase().includes(search.toLowerCase()))
+    return posts.filter(post => post.title.toLowerCase().includes(search.toLowerCase()))
   }
 }

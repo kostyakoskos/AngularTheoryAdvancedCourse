@@ -1,4 +1,5 @@
 import {Component} from '@angular/core'
+import { AppCounterService } from './services/app-counter.service';
 
 export interface Post {
   title: string
@@ -11,6 +12,8 @@ export interface Post {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private appCounterService: AppCounterService){ }
 
   search = '';
   searchField:any = 'title';
