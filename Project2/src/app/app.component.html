@@ -1,0 +1,9 @@
+<div class="container">
+  <button class="btn" (click)="searchField = 'title'">Title</button>
+  <button class="btn" (click)="searchField = 'text'">Text</button>
+  <input type="text" [(ngModel)]="search">
+  <div *ngFor='let post of posts | filter:search:searchField' class="card">
+      <h2>{{ post.title }}</h2>
+      <h2>{{ post.text }}</h2>
+  </div>
+</div>
