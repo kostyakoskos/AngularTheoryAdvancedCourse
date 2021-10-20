@@ -8,6 +8,8 @@ import {HomeComponent} from './home/home.component'
 import {PostsComponent} from './posts/posts.component'
 import {PostComponent} from './post/post.component'
 import {AboutExtraComponent} from './about-extra/about-extra.component'
+import { RouterModule } from '@angular/router'
+import { ApproutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {AboutExtraComponent} from './about-extra/about-extra.component'
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule,
+    ApproutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
