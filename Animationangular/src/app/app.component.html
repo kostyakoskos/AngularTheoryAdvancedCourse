@@ -1,0 +1,17 @@
+<div class="wrap">
+
+  <button (click)="animate()">Animate</button>
+  <!-- <button 
+  *ngIf="boxState=='special';
+   else "
+   (click)="boxState = 'special'">Animate</button> -->
+   <button (click)="boxState = 'special'">Animate</button>
+  <hr>
+
+
+  <div 
+  class="box"
+  [@box]="boxState">
+  {{boxState | uppercase}}
+  </div>
+</div>

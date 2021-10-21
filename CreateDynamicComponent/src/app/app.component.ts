@@ -1,5 +1,6 @@
-import { Component, ComponentFactoryResolver } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewChild } from '@angular/core';
 import { ModalComponent } from './modal/modal.component';
+import { RefDirective } from './modal/ref.directive';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,14 @@ import { ModalComponent } from './modal/modal.component';
 })
 export class AppComponent {
   
-  constructor(private resolver: ComponentFactoryResolver){
+  @ViewChild(RefDirective, {static: false}) 
+  refDir: RefDirective = '';
 
-  }
+  constructor(private resolver: ComponentFactoryResolver){ }
 
   showModal() {
   const modalFactory =  this.resolver.resolveComponentFactory(ModalComponent);
+  this.refDir.containerRef.clear();
   }
 
 
