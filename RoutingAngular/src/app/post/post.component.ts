@@ -12,7 +12,8 @@ export class PostComponent implements OnInit{
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private postsSerice: PostsService){}
+    private postsSerice: PostsService,
+    ){}
 
   backToAbout() {
     this.router.navigate(['/'])
