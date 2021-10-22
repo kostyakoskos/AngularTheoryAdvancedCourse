@@ -23,12 +23,16 @@ import { Component } from '@angular/core';
             background: 'pink'
         }))
       ]),
+      transition('void => *', [
+        style({opacity: 0}), animate(750)
+      ]),
     ])
   ]
    
 
 })
 export class AppComponent {
+  visible = true;
   boxState = 'start';
 
   animate(){

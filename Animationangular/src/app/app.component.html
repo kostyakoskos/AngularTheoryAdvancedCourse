@@ -6,11 +6,13 @@
    else "
    (click)="boxState = 'special'">Animate</button> -->
    <button (click)="boxState = 'special'">Animate</button>
+   <button (click)="visible = !visible">Visibility</button>
   <hr>
 
 
   <div 
   class="box"
+  *ngIf="visible"
   [@box]="boxState">
   {{boxState | uppercase}}
   </div>

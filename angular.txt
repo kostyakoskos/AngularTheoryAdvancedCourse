@@ -60,7 +60,7 @@ trim - пустая или нет строка.
 1. routerlink
 
 Запуск  ng serve --o
-ng g c post-component --skipTests - создание компонента.
+ng g c post-component --skipTests - создание компонента. ng generate component
 ng g d style2 --skipTests - Создание директивы.
 
 ctrl + d - выбрать несколько
@@ -131,15 +131,22 @@ providers: классы, создающие сервисы, используем
 bootstrap: корневой компонент, который вызывается по умолчанию при загрузке приложения
 })
 
-Lazy loafing- загрузка только необходимых модулей. Т.е. по молчанию мы грузим все модули. Но можно загружать страницу about, только если мы её открываем.
+Lazy loading- загрузка только необходимых модулей. Т.е. по молчанию мы грузим все модули. Но можно загружать страницу about, только если мы её открываем.
 Пример работы:
-{path: 'about', loadChildren: () => import('./about-page/about-extra-page/about-page.module').then(m => m.AboutPageModule)}
+//{path:'about', loadChildren: './about-page/about-extra-page/about-page.module#AboutPageModule'},
+// new sintacsis
+{path: 'about', loadChildren: () => import('./about-page/about-extra-page/about-page.module').then(m => m.AboutPageModule)},
 Можно использовать lazy loading с параметрами. Например, после загрузки самых необходимых модулей, будут загружаться в фоновом режиме отдельные модули. 
  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})]
 
 Динамические компонеты- те, которые может создавать в typescript.
 
 <ng-template> - специальный html тег в angular, который при компиляции не будет появляться в DOM дереве. Применяется только при разработке.
+
+Анимации. webAnimationApi- делать сложные анимации с использованием js. Находится в модуле BrowserAnimationsModule.
+[@box]="boxState" - binding для анимаций, использование @ обязательно. После равно пишем название состояния.
+transition - отвчает за процесс анимации. Можем задать время, например, за 2000 мс цвет квадрата поменяется на другой. Произойдет это плавно.
+ease-in-out - для плавной кофигурации. 
 
 Вопросы:
 1. Что такое Guards? Guards - это такая сущность в angular, который решает можно ли загрузить компонент на страницу(т.е. можно ли пользователю войти как админ, например).
