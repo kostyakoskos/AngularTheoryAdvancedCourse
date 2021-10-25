@@ -1,20 +1,21 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http'
 import {User} from '../../../shared/interface'
-import { ThrowStmt } from "@angular/compiler";
 import { Observable } from "rxjs";
 import { UserData } from "../auth.model";
+// import { UserData } from "../auth.model";
 
 @Injectable()
 
 export class AuthService {
-    readonly baseURL = "http://localhost:44315/api/User";
+    readonly baseURL = 'https://localhost:44315/api/User';
+    //readonly baseURL = 'https://localhost:44315/api/PaymentDetail';
 
-    formSomeData: UserData = new UserData();
+    formData: UserData = new UserData();
 
     postSomeUser() {
         console.log('post method work');
-        return this.http.post(this.baseURL, this.formSomeData);
+        return this.http.post(this.baseURL, this.formData);
     }
 
     

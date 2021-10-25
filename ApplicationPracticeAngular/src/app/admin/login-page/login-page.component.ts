@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   //   'password': new FormControl("",),
   // });
 
-  constructor(public auth: AuthService,
+  constructor(public service: AuthService,
     private router: Router,
     private toastr:ToastrService) { }
 
@@ -58,7 +58,7 @@ export class LoginPageComponent implements OnInit {
   // }
 
   onSubmit(form: NgForm){
-    this.auth.postSomeUser().subscribe(
+    this.service.postSomeUser().subscribe(
       res => {
         console.log('add');
         this.resetForm(form);
@@ -72,7 +72,7 @@ export class LoginPageComponent implements OnInit {
 
   resetForm(form:NgForm){
     form.form.reset();
-    this.auth.formSomeData = new UserData();
+    this.service.formData = new UserData();
   }
 
 }
