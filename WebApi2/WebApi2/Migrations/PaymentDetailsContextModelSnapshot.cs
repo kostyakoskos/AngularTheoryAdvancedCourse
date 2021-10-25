@@ -52,6 +52,12 @@ namespace WebApi2.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAdminTwo")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(100)");
 
@@ -60,9 +66,6 @@ namespace WebApi2.Migrations
 
                     b.Property<string>("Token")
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("isAdmin")
-                        .HasColumnType("bit");
 
                     b.HasKey("UserId");
 

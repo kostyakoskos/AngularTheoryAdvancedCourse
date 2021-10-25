@@ -5,6 +5,7 @@ import { User } from 'src/app/shared/interface';
 import { UserData } from '../shared/auth.model';
 import { AuthService } from '../shared/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -12,14 +13,14 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginPageComponent implements OnInit {
 
-  // form: FormGroup =  new FormGroup({
-  //   'email': new FormControl("", ),
+  // formTwo: FormGroup = new FormGroup({
+  //   'email': new FormControl("",),
   //   'password': new FormControl("",),
   // });
 
   constructor(public service: AuthService,
     private router: Router,
-    private toastr:ToastrService) { }
+    private toastr: ToastrService) { }
 
   // ngOnInit() {
   //   this.form = new FormGroup({
@@ -38,6 +39,19 @@ export class LoginPageComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    // this.formTwo = new FormGroup({
+    //   email: new FormControl(null,
+    //     [
+    //       Validators.email,
+    //       Validators.required
+    //     ]
+    //   ),
+    //   password: new FormControl(null,
+    //     [
+    //       Validators.required,
+    //       Validators.minLength(6),
+    //     ]),
+    // })
   }
 
   // submit(){
@@ -57,7 +71,7 @@ export class LoginPageComponent implements OnInit {
   //   })
   // }
 
-  onSubmit(form: NgForm){
+  onSubmit(form: NgForm) {
     this.service.postSomeUser().subscribe(
       res => {
         console.log('add');
@@ -70,7 +84,7 @@ export class LoginPageComponent implements OnInit {
     )
   }
 
-  resetForm(form:NgForm){
+  resetForm(form: NgForm) {
     form.form.reset();
     this.service.formData = new UserData();
   }

@@ -1,10 +1,10 @@
 export class UserData {
     UserId: Number = 0;
-    Name: string = 'string';
-    Email: string = 'string';
-    Password: string = 'string';
+    Name: string = 'stringName';
+    Email: string = '';
+    Password: string = '';
     isAdmin: boolean = false;
-    Token: string = 'string';
+    Token: string = 'stringToken';
 }
 
 // export class PaymentDetail {

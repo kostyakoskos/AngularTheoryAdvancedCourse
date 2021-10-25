@@ -9,8 +9,8 @@ using WebApi2.Models;
 namespace WebApi2.Migrations
 {
     [DbContext(typeof(PaymentDetailsContext))]
-    [Migration("20211025082017_User Add email")]
-    partial class UserAddemail
+    [Migration("20211025122910_initialize")]
+    partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,14 +54,20 @@ namespace WebApi2.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAdminTwo")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("isAdmin")
-                        .HasColumnType("bit");
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("UserId");
 

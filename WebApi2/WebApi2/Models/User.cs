@@ -21,6 +21,9 @@ namespace WebApi2.Models
         public string Password { get; set; }
 
         [Column(TypeName = "bit")]
-        public bool isAdmin { get; set; }
+        public bool IsAdmin { get; set; }
+
+        [Column(TypeName = "bit")]
+        public bool IsAdminTwo { get; set; }
     }
 }

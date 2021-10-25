@@ -13,17 +13,25 @@ export class AuthService {
 
     formData: UserData = new UserData();
 
+    // Set admin func on server.
+    // setAdmin(){
+    //     console.log(this.formData.UserId);
+    //     if(this.formData.UserId == 1) {
+    //         this.formData.isAdmin = true;
+    //     }
+    // }
+
     postSomeUser() {
         console.log('post method work');
         return this.http.post(this.baseURL, this.formData);
-    }
-
-    
+    }    
 
     constructor(private http: HttpClient){}
 
     get token(): string {
-        return ''
+        // const expireceData
+        // return localStorage.getItem('fb-token');
+        return '';
     }
 
     login(user: User): Observable<any>{

@@ -1,89 +1,23 @@
 <!-- http://localhost:4200/admin/login -->
-<!-- <form class="card" [formGroup]="form" (ngSubmit)="submit()">
-    <h2>Enter to Admin panel</h2>
-
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="UserId" [value]="service.formData.UserId" [value]="service.formData.UserId" />
     <div class="form-control">
-        <label>Email</label>
-        <input type="text" placeholder="Email" formControlName='email'>
+        <label>EMAIL</label>
+        <input type="email" placeholder="Email" name="email" #Email="ngModel" [(ngModel)]="service.formData.Email"
+            required email>
         <div class="validation">
-            <small>Some small text</small>
+            <small>email</small>
         </div>
     </div>
-
     <div class="form-control">
-        <label>Password</label>
-        <input type="password" placeholder="Password" formControlName='password' >
-        <div  class="validation">
+        <label>PASSWORD</label>
+        <input type="password" class="form-control form-control-lg" placeholder="Password" name="password"
+            #Password="ngModel" [(ngModel)]="service.formData.Password" required minlength="6">
+        <div class="validation">
             <small>password</small>
         </div>
-    </div> 
-
-    <button
-     type="submit"
-     class="btn btn-primary"
-     [disabled]="form.invalid"
-    >Enter</button> 
-</form> -->
-
-<form novalidate #form="ngForm" (submit)="onSubmit(form)">
-    <input type="hidden" name="UserId" [value]="service.formData.UserId"
-        [value]="service.formData.UserId" />
-    <div class="form-group">
-        <label>EMAIL</label>
-        <input class="form-control form-control-lg" placeholder="Full Name" name="email"
-            #Email="ngModel" [(ngModel)]="service.formData.Email"
-            >
     </div>
-    <div class="form-group">
-        <label>PASSWORD</label>
-        <input class="form-control form-control-lg" placeholder="Passwd" name="password"
-            #Password="ngModel" [(ngModel)]="service.formData.Password"
-        >
-    </div>
-    <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" type="submit">Submit</button>
-    </div>
-</form>
-
-<!-- <form novalidate #form="ngForm" (submit)="onSubmit(form)">
-    <input type="hidden" name="paymentDetailId" [value]="service.formData.paymentDetailId"
-        [value]="service.formData.paymentDetailId" />
-     <div class="form-group">
-            <label>CARD OWNER NAME</label>
-            <h1>Hello angular!</h1>
-            <input class="form-control form-control-lg" placeholder="Full Name" 
-            name="cardOwnerName" #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName" >
-
-            <input class="form-control form-control-lg" placeholder="Full Name" 
-            name="cardOwnerName" #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName" >
-        </div>
-    <div class="form-group">
-        <label>CARD OWNER NAME</label>
-        <input class="form-control form-control-lg" placeholder="Full Name" name="cardOwner"
-            #cardOwner="ngModel" [(ngModel)]="service.formData.cardOwner" required
-            [class.invalid]="cardOwner.invalid && cardOwner.touched">
-    </div>
-    <div class="form-group">
-        <label>CARD NUMBER</label>
-        <input class="form-control form-control-lg" placeholder="16 Digit Card Number" name="cardNumber"
-            #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber" required maxlength="16" minlength="16"
-            [class.invalid]="cardNumber.invalid && cardNumber.touched">
-    </div>
-    <div class="form-row">
-        <div class="form-group  col-md-4">
-            <label>SECURITY CODE</label>
-            <input type="password" class="form-control form-control-lg" placeholder="Security Code" name="securityCode"
-                #securityCode="ngModel" [(ngModel)]="service.formData.securityCode" required maxlength="3" minlength="3"
-                [class.invalid]="securityCode.invalid && securityCode.touched">
-        </div>
-        <div class="form-group  col-md-4">
-            <label>VALIDE THROUGH</label>
-            <input class="form-control form-control-lg" placeholder="MM/YY" name="expirationDate"
-                #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate" required maxlength="5"
-                minlength="5" [class.invalid]="expirationDate.invalid && expirationDate.touched">
-        </div>
-    </div>
-    <div class="form-group">
+    <div class="form-control">
         <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Submit</button>
     </div>
-</form> -->
+</form>
