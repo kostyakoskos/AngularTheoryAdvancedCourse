@@ -1,5 +1,58 @@
 Есть тесты в Angular: 
-1. Unit тесты, тестируют функционал классов, сервисов.
-2. Интеграционный, 
+1. Unit тесты, тестируют функционал классов, сервисов, форм.
+2. Интеграционный, тестирование польщовательского взаимодефствия.
 3. end to end, как front-end взаимодействет с back-end
+
+ng test - запуск теста
+bg test --code-coverage  - узнать какое покрытие тестами приложения.
+
+Тетсировать встроенный классы не надо, т.к. angular их сам тестирует.
+
+ctrl + click - ho to defenition in vs code
+
+1. Unit
+describe('greet', () => {
+    it('should include name & result', () => {
+        expect(greet('Angular ')).toContain('Hello Angular');
+    })
+})
+
+Пропустить тест: 
+xit
+xdescribe
+
+Функции с ожидаемым результатом: 
+toBe - полностью совпадает
+toContain - содержит подстроку
+toBeTruthy - проверка на true
+
+
+Тесты не должны влиять друг на друга.beforeEach - перед каждым вызовом, обновляется instance компонента.
+beforeAll- перед каждым it
+afterEach - после каждого it что-то делаем.
+afterAll - после всех it что-то делаем
+let com: CounterComponent;
+beforeEach(() => {
+        com = new CounterComponent();
+})
+
+мок- следить за вызовом метода. spyOn пример метода.
+С помощью spyOn тестируем сервисы.
+
+Примеры: 
+
+Тестирование массива: 
+describe('countries', () => {
+    it('Array test. Should contain countries codes.', () => {
+       const result = countries();
+       expect(result).toContain('RU');
+       expect(result).toContain('BY');
+       expect(result).toContain('EN');
+    })
+})
+
+2. Интеграционный
+Например, мы поменяли значение counter в компоненте.Изменится ли значение в html? (Выводим counter из .ts в html)
+Интеграционный тест отличается от юнит тем, что в интеграционном мы работаем в шаблоне, а в unit можем рабоатать сразу с элементом.
+TestBed
 
