@@ -3,34 +3,26 @@ import { HttpClient } from '@angular/common/http'
 import {User} from '../../../shared/interface'
 import { Observable } from "rxjs";
 import { UserData } from "../auth.model";
+import { Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
 // import { UserData } from "../auth.model";
 
 @Injectable()
 
 export class AuthService {
     readonly baseURL = 'https://localhost:44315/api/User';
-    //readonly baseURL = 'https://localhost:44315/api/PaymentDetail';
 
     formData: UserData = new UserData();
-
-    // Set admin func on server.
-    // setAdmin(){
-    //     console.log(this.formData.UserId);
-    //     if(this.formData.UserId == 1) {
-    //         this.formData.isAdmin = true;
-    //     }
-    // }
 
     postSomeUser() {
         console.log('post method work');
         return this.http.post(this.baseURL, this.formData);
     }    
 
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient,
+        private router: Router,){}
 
     get token(): string {
-        // const expireceData
-        // return localStorage.getItem('fb-token');
         return '';
     }
 
@@ -48,5 +40,16 @@ export class AuthService {
 
     private setToken() {
 
+    }
+
+    loginUser(form: NgForm){
+        this.http.post(this.baseURL, this.formData)
+        .subscribe(response => {
+            const token = (<any>response).token;
+            localStorage.setItem("jwt", token);
+            this.router.navigate(["/"]);
+        }, err => {
+            console.log('error in auth.service');
+        })
     }
 }

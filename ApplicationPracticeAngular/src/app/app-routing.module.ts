@@ -3,7 +3,7 @@ import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {MainLayoutComponent} from './shared/components/main-layout/main-layout.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {PostPageComponent} from './post-page/post-page.component';
-
+import { LoginPageForAllUsersComponent } from './shared/components/login-page-for-all-users/login-page-for-all-users.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,10 @@ const routes: Routes = [
   },
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
-  }
+  },
+  {
+    path: 'loginn', component: LoginPageForAllUsersComponent
+  },
 ];
 
 @NgModule({

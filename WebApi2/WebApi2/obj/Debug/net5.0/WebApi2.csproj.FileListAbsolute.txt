@@ -268,3 +268,4 @@ C:\Users\kanstantsin.karatkev\source\repos\AngularTheoryPractice\WebApi2\WebApi2
 C:\Users\kanstantsin.karatkev\source\repos\AngularTheoryPractice\WebApi2\WebApi2\obj\Debug\net5.0\ref\WebApi2.dll
 C:\Users\kanstantsin.karatkev\source\repos\AngularTheoryPractice\WebApi2\WebApi2\obj\Debug\net5.0\WebApi2.pdb
 C:\Users\kanstantsin.karatkev\source\repos\AngularTheoryPractice\WebApi2\WebApi2\obj\Debug\net5.0\WebApi2.genruntimeconfig.cache
+C:\Users\kanstantsin.karatkev\source\repos\AngularTheoryPractice\WebApi2\WebApi2\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

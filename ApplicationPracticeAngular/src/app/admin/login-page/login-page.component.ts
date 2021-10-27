@@ -5,6 +5,7 @@ import { User } from 'src/app/shared/interface';
 import { UserData } from '../shared/auth.model';
 import { AuthService } from '../shared/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-login-page',
@@ -19,8 +20,9 @@ export class LoginPageComponent implements OnInit {
   // });
 
   constructor(public service: AuthService,
-    private router: Router,
-    private toastr: ToastrService) { }
+    
+    private toastr: ToastrService, 
+    private http: HttpClient) { }
 
   // ngOnInit() {
   //   this.form = new FormGroup({
@@ -88,5 +90,4 @@ export class LoginPageComponent implements OnInit {
     form.form.reset();
     this.service.formData = new UserData();
   }
-
 }
