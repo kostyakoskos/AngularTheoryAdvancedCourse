@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import {HttpClientModule} from "@angular/common/http";
-import { LoginPageForAllUsersComponent } from './components/login-page-for-all-users/login-page-for-all-users.component';
+// import { LoginPageForAllUsersComponent } from './components/login-page-for-all-users/login-page-for-all-users.component';
 import {RouterModule} from '@angular/router';
 
 // children: [
@@ -15,7 +15,7 @@ import {RouterModule} from '@angular/router';
     imports: [HttpClientModule],
     exports: [HttpClientModule],
     declarations: [
-      LoginPageForAllUsersComponent
+      // LoginPageForAllUsersComponent
     ],
 })
 

@@ -12,17 +12,4 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  isAunteficated(): boolean{
-    console.log('in isAuth method')
-    var token:any = localStorage.getItem("jwt");
-    if(token){
-      return true;
-    }
-    return false;
-  }
-
-  logout(){
-    console.log('logout method')
-    localStorage.removeItem("jwt");
-  }
 }

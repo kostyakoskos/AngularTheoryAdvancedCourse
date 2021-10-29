@@ -1,5 +1,5 @@
 <!-- http://localhost:4200/admin/login -->
-<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+<form novalidate #form="ngForm" (submit)="twoMethod(form)">
     <input type="hidden" name="UserId" [value]="service.formData.UserId" [value]="service.formData.UserId" />
     <div class="form-control">
         <label>EMAIL</label>

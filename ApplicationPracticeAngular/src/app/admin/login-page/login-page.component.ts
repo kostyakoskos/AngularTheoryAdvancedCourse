@@ -18,10 +18,14 @@ export class LoginPageComponent implements OnInit {
   //   'email': new FormControl("",),
   //   'password': new FormControl("",),
   // });
+  // readonly tokenURL = 'https://localhost:44315/api/auth/login';
+  readonly tokenURL = 'https://localhost:44315/api/user';
+
+  formD: UserData = new UserData();
 
   constructor(public service: AuthService,
-    
-    private toastr: ToastrService, 
+    private router: Router,
+    private toastr: ToastrService,
     private http: HttpClient) { }
 
   // ngOnInit() {
@@ -89,5 +93,50 @@ export class LoginPageComponent implements OnInit {
   resetForm(form: NgForm) {
     form.form.reset();
     this.service.formData = new UserData();
+  }
+
+  // loginUser(form: NgForm) {
+  //   const dataFromForm = {
+  //     'Email': form.value.email,
+  //     'Password': form.value.password,
+  //   }
+
+  //   this.http.post(this.tokenURL, this.formD)
+  //     .subscribe(response => {
+  //       const token = (<any>response).token;
+  //       localStorage.setItem("jwt", token);
+  //       this.router.navigate(["/"]);
+  //     }, err => {
+  //       console.log('error in auth.service');
+  //     })
+  // }
+
+  twoMethod(form: NgForm){
+    // const dataFromForm = {
+    //   'Email': form.value.email,
+    //   'Password': form.value.password,
+    // }
+
+    this.http.post(this.tokenURL, this.formD)
+      .subscribe(response => {
+        console.log('in 2 method');
+        const token = (<any>response).token;
+        localStorage.setItem("jwt", token);
+        console.log('token', response);
+      }, err => {
+        console.log('error in auth.service');
+        console.log('err', err)
+      })
+
+      // this.service.postSomeUser().subscribe(
+      //   res => {
+      //     console.log('add');
+      //     this.resetForm(form);
+      //     this.toastr.success('Sumbit success', 'Payment Detail Register')
+      //   },
+      //   err => {
+      //     console.log('error', err);
+      //   }
+      // )
   }
 }
