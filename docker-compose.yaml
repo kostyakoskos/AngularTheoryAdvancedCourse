@@ -1,0 +1,23 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  sql-server-db:
+    container_name: sql-server-db
+    image: microsoft/mssql-server-windows:2019-latest
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "password"
+      ACCEPT_EULA: "Y"
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+      - logvolume01:/var/log
+    links:
+      - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}

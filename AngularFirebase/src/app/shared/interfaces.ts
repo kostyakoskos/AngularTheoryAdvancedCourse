@@ -9,14 +9,14 @@ export interface FbAuthResponse {
   expiresIn: string
 }
 
-export interface Post{
-  id?: string,
-  title: string,
-  text: string,
-  author: string,
-  date: Date,
+export interface Post {
+  id?: string
+  title: string
+  text: string
+  author: string
+  date: Date
 }
 
-export interface fbCreateResponse{
-  name: string,
+export interface FbCreateResponse {
+  name: string
 }

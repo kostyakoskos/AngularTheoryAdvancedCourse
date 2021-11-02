@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Owb02c4d68inqt9qZPENJUMD3fS9j5RL6r9ouWjY23FR4Ld36Y7NhLQF3f6nSxIUVyrdfnltNb5q/KzWZ5rejA==",
+  "dgSpecHash": "im2rCsVKZ6UfLr5mLdyfzKeU8amXXE15HAybJAtVBMQ9kys2nKiscn+cC2caDcEQM7Vg9hPhBsZZoSEiGWTEIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\kanstantsin.karatkev\\source\\repos\\AngularTheoryPractice\\WebApi2\\WebApi2\\WebApi2.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
     "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\5.0.2\\microsoft.visualstudio.web.codegeneration.5.0.2.nupkg.sha512",
     "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\5.0.2\\microsoft.visualstudio.web.codegeneration.contracts.5.0.2.nupkg.sha512",
     "C:\\Users\\kanstantsin.karatkev\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\5.0.2\\microsoft.visualstudio.web.codegeneration.core.5.0.2.nupkg.sha512",
